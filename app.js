@@ -31,7 +31,7 @@ var app = express();
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.hbxg6p5.mongodb.net/local_library?retryWrites=true&w=majority`;
+const mongoDB = process.env.MONGO_URI;
 
 main().catch((err) => console.log(err));
 async function main() {
